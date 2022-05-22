@@ -16,12 +16,7 @@ mySong = music(seq, pins=[Pin(15)])
 while True:
     mySong.tick()
     sleep(0.04)
-    
-    
-    
-    
-    
-    
+  
 
 """
 Find a piece of music on onlinesequencer.net, click edit,
