@@ -27,10 +27,9 @@ def handle_interrupt(pin):  #Avoid using print() inside isr
   motion = False
   
 
-  
-
 # condition = Pin.IRQ_RISING | Pin.IRQ_FALLING
 condition = Pin.IRQ_FALLING
 
 pir.irq(trigger = condition, handler = handle_interrupt)
+
 
