@@ -14,10 +14,13 @@ def handle_interrupt(pin):  #Avoid using print() inside isr
       return
   motion = True
   led.on()
-  sleep(3)
+  sleep(1)
   led.off()
   motion = False
   
 
-pir.irq(trigger = Pin.IRQ_RISING | Pin.IRQ_FALLING, handler = handle_interrupt)
+# condition = Pin.IRQ_RISING | Pin.IRQ_FALLING
+condition = Pin.IRQ_FALLING
+
+pir.irq(trigger = condition, handler = handle_interrupt)
 
