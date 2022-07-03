@@ -9,16 +9,13 @@ def handle_interrupt(pin):  #Avoid using print() inside isr
   global motion
   global led
   global pir
-  print("2")
   print(pir.value())
   if(motion == True):
       return
   motion = True
   led.on()
-  print("motion detected")
   sleep(3)
   led.off()
-  print("pin off")
   motion = False
   
 
