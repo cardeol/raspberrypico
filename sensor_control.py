@@ -8,13 +8,13 @@ timer = Timer()
 class SensorControl:  
     def __init__(self):
         # Init
-        self.limit_sec = 350
+        self.limit_sec = 450
         self.light_limit = 8
-        self.buzzer = Buzzer(15)
+        self.buzzer = Buzzer(11)
         self.sensor = LightSensor(16,17)
         self.init_time = utime.time()
         
-        # turn on off led
+        # turn on off pico led
         led = Pin(25, Pin.OUT)
         led.high()
         utime.sleep_ms(300)
@@ -22,7 +22,7 @@ class SensorControl:
 
     def check(self, *args, **kwargs):
         lux_val = self.sensor.read()
-
+        #print(lux_val)
         if lux_val > self.light_limit:
             elapsed = utime.time() - self.init_time
             if elapsed > self.limit_sec:
