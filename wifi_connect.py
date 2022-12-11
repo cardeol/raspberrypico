@@ -32,7 +32,7 @@ else:
 def connectMQTT():
     client = MQTTClient(client_id=b"rp20.cmooo.com",
         server=b"broker.hivemq.com",
-        port=1883,wi
+        port=1883,
         keepalive=7200,
         ssl=False,
     )
