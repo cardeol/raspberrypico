@@ -71,7 +71,10 @@ def publish(message):
     global client
     if not connected:
         raise RuntimeError('mqtt not connected')
-    action = { 'action': message }
+    action = {
+        'data': message
+        'action': 'pico_action'
+    }
     print("sending message",message)
     client.publish(TOPIC, encrypt(action))
    
